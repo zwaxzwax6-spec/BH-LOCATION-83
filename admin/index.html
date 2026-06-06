@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Espace gérant — BH Location 83</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --font-display:'Instrument Serif',serif; --font-body:'Inter',sans-serif;
+      --bg:#050507; --fg:#ffffff;
+      --muted:rgba(255,255,255,0.55); --muted-2:rgba(255,255,255,0.75);
+      --red:#d4202e; --red-soft:rgba(212,32,46,0.18); --red-glow:rgba(212,32,46,0.45);
+      --glass:rgba(255,255,255,0.04); --glass-hi:rgba(255,255,255,0.07);
+      --glass-bd:rgba(255,255,255,0.1); --glass-bd-hi:rgba(255,255,255,0.18);
+      --r-sm:14px; --r-md:22px; --r-lg:28px;
+      --ease-quart:cubic-bezier(0.25,1,0.5,1);
+      --ok:#5fd38a; --warn:#f5c451;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;min-height:100vh;
+      background-image:radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,32,46,0.10), transparent 60%);background-repeat:no-repeat;}
+    a{color:inherit;text-decoration:none;}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 1.25rem;}
+    @media(min-width:768px){.container{padding:0 2rem;}}
+
+    /* TOPBAR */
+    .topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+      padding:0.9rem 1.25rem;background:rgba(10,10,13,0.6);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+      border-bottom:1px solid var(--glass-bd);}
+    @media(min-width:768px){.topbar{padding:1rem 2rem;}}
+    .brand{display:flex;align-items:center;gap:0.7rem;}
+    .brand img{height:26px;width:auto;display:block;}
+    .brand .tag{font-size:0.64rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);border:1px solid var(--red-soft);padding:0.2rem 0.55rem;border-radius:999px;}
+    .logout{font-size:0.82rem;color:var(--muted-2);padding:0.5rem 1rem;border:1px solid var(--glass-bd);border-radius:999px;transition:all .25s var(--ease-quart);background:var(--glass);cursor:pointer;}
+    .logout:hover{color:#fff;border-color:var(--glass-bd-hi);}
+
+    .head{padding:2.5rem 0 1.5rem;}
+    .eyebrow{display:inline-block;font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--red);margin-bottom:0.8rem;font-weight:500;}
+    h1{font-family:var(--font-display);font-size:clamp(2rem,6vw,3rem);line-height:1;letter-spacing:-1px;font-weight:400;}
+    .sub{margin-top:0.7rem;color:var(--muted-2);font-size:0.92rem;}
+
+    /* STATS / FILTRES */
+    .filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.5rem 0 2rem;}
+    .fpill{font-size:0.82rem;color:var(--muted-2);padding:0.5rem 1rem;background:var(--glass);border:1px solid var(--glass-bd);border-radius:999px;transition:all .25s var(--ease-quart);display:inline-flex;align-items:center;gap:0.5rem;cursor:pointer;}
+    .fpill:hover{color:#fff;border-color:var(--glass-bd-hi);}
+    .fpill.active{color:#050507;background:#fff;border-color:#fff;font-weight:500;}
+    .fpill .n{font-size:0.72rem;padding:0.05rem 0.45rem;border-radius:999px;background:rgba(255,255,255,0.12);color:#fff;}
+    .fpill.active .n{background:rgba(5,5,7,0.12);color:#050507;}
+
+    /* CARDS */
+    .list{display:flex;flex-direction:column;gap:1rem;padding-bottom:4rem;}
+    .demande{background:var(--glass);border:1px solid var(--glass-bd);border-radius:var(--r-lg);padding:1.4rem;transition:border-color .3s var(--ease-quart);}
+    .demande:hover{border-color:var(--glass-bd-hi);}
+    .d-top{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:0.75rem;}
+    .d-veh{font-family:var(--font-display);font-size:1.5rem;line-height:1.1;letter-spacing:-0.5px;}
+    .d-when{font-size:0.76rem;color:var(--muted);margin-top:0.2rem;}
+    .badge{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.35rem 0.7rem;border-radius:999px;white-space:nowrap;}
+    .badge.a_traiter{background:rgba(245,196,81,0.16);color:var(--warn);border:1px solid rgba(245,196,81,0.3);}
+    .badge.confirme{background:rgba(95,211,138,0.16);color:var(--ok);border:1px solid rgba(95,211,138,0.3);}
+    .badge.refuse{background:rgba(212,32,46,0.16);color:#ff6b6b;border:1px solid rgba(212,32,46,0.3);}
+
+    .d-grid{display:grid;grid-template-columns:1fr;gap:0.8rem 1.5rem;margin:1.2rem 0 0;}
+    @media(min-width:600px){.d-grid{grid-template-columns:1fr 1fr;}}
+    .kv{display:flex;flex-direction:column;gap:0.25rem;}
+    .kv .k{font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+    .kv .v{font-size:0.95rem;color:#fff;}
+    .kv .v a{color:#fff;border-bottom:1px solid var(--glass-bd-hi);}
+    .kv .v a:hover{border-color:var(--red);}
+    .d-msg{margin-top:1rem;padding:0.9rem 1rem;background:rgba(255,255,255,0.02);border:1px solid var(--glass-bd);border-radius:var(--r-sm);font-size:0.9rem;color:var(--muted-2);line-height:1.55;white-space:pre-wrap;}
+
+    .d-actions{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid var(--glass-bd);}
+    .act{font-family:var(--font-body);font-size:0.8rem;font-weight:500;padding:0.5rem 1rem;border-radius:999px;cursor:pointer;border:1px solid var(--glass-bd);background:var(--glass);color:var(--muted-2);transition:all .2s var(--ease-quart);}
+    .act:hover{color:#fff;border-color:var(--glass-bd-hi);}
+    .act.cur{cursor:default;}
+    .act.cur.a_traiter{background:rgba(245,196,81,0.16);color:var(--warn);border-color:rgba(245,196,81,0.4);}
+    .act.cur.confirme{background:rgba(95,211,138,0.16);color:var(--ok);border-color:rgba(95,211,138,0.4);}
+    .act.cur.refuse{background:rgba(212,32,46,0.16);color:#ff6b6b;border-color:rgba(212,32,46,0.4);}
+    .act.go-confirme:hover{color:var(--ok);border-color:rgba(95,211,138,0.4);}
+    .act.go-refuse:hover{color:#ff6b6b;border-color:rgba(212,32,46,0.4);}
+    .act:disabled{opacity:0.5;cursor:wait;}
+    .act-label{font-size:0.7rem;color:var(--muted);align-self:center;margin-right:0.2rem;letter-spacing:0.04em;}
+
+    .empty{text-align:center;color:var(--muted);padding:4rem 1rem;font-size:0.95rem;border:1px dashed var(--glass-bd);border-radius:var(--r-lg);}
+
+    /* LOGIN */
+    .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;}
+    .login-card{width:100%;max-width:400px;background:var(--glass);border:1px solid var(--glass-bd);border-radius:var(--r-lg);padding:2.4rem 2rem;
+      backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);}
+    .login-card .logo{display:block;height:30px;margin:0 auto 1.6rem;}
+    .login-card h1{font-size:1.9rem;text-align:center;margin-bottom:0.4rem;}
+    .login-card .sub{text-align:center;margin-bottom:1.8rem;}
+    .field{display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.1rem;}
+    .field label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+    .field input{font-family:var(--font-body);font-size:0.95rem;color:#fff;background:rgba(255,255,255,0.03);border:1px solid var(--glass-bd);border-radius:var(--r-sm);padding:0.85rem 1rem;transition:border-color .25s var(--ease-quart);}
+    .field input:focus{outline:none;border-color:var(--red);}
+    .btn-accent{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-family:var(--font-body);font-size:0.92rem;font-weight:500;padding:0.9rem 1.5rem;border-radius:999px;background:var(--red);color:#fff;box-shadow:0 4px 28px var(--red-glow);border:none;cursor:pointer;transition:all .25s var(--ease-quart);margin-top:0.5rem;}
+    .btn-accent:hover{background:#e02938;transform:translateY(-1px);}
+    .btn-accent:disabled{opacity:0.6;cursor:wait;transform:none;}
+    .err{background:rgba(212,32,46,0.12);border:1px solid var(--red-soft);color:#ff8a8a;font-size:0.85rem;padding:0.7rem 0.9rem;border-radius:var(--r-sm);margin-bottom:1.2rem;text-align:center;}
+    .back-site{display:block;text-align:center;margin-top:1.4rem;font-size:0.82rem;color:var(--muted);}
+    .back-site:hover{color:#fff;}
+    .hidden{display:none!important;}
+    .loading{text-align:center;color:var(--muted);padding:4rem 1rem;font-size:0.95rem;}
+  </style>
+</head>
+<body>
+  <!-- ÉCRAN DE CONNEXION -->
+  <div id="login-screen" class="login-wrap hidden">
+    <form class="login-card" id="login-form">
+      <img class="logo" src="/images/logo-bh.png" alt="BH Location 83" />
+      <h1>Espace gérant</h1>
+      <p class="sub">Gestion des demandes de réservation</p>
+      <div class="err hidden" id="login-err"></div>
+      <div class="field">
+        <label for="u">Identifiant (email)</label>
+        <input type="email" id="u" name="email" autocomplete="username" autofocus required />
+      </div>
+      <div class="field">
+        <label for="p">Mot de passe</label>
+        <input type="password" id="p" name="password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" class="btn-accent" id="login-btn">Se connecter</button>
+      <a class="back-site" href="/">← Retour au site</a>
+    </form>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dash-screen" class="hidden">
+    <div class="topbar">
+      <div class="brand">
+        <img src="/images/logo-bh.png" alt="BH Location 83" />
+        <span class="tag">Admin</span>
+      </div>
+      <button class="logout" id="logout-btn">Déconnexion</button>
+    </div>
+    <div class="container">
+      <div class="head">
+        <span class="eyebrow">Demandes de réservation</span>
+        <h1>Tableau de bord</h1>
+        <p class="sub" id="dash-sub">Chargement…</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="list" id="list">
+        <div class="loading">Chargement des demandes…</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SUPA_URL='https://xqppgxwikpbhxnnyuniu.supabase.co';
+    const SUPA_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxcHBneHdpa3BiaHhubnl1bml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2OTEyMDIsImV4cCI6MjA5NjI2NzIwMn0.XwjyiNtkedZclxVRH-Pn97H2Toz1MryjoIzkaZ5c5uM';
+    const supa = createClient(SUPA_URL, SUPA_ANON);
+
+    const STATUTS=['a_traiter','confirme','refuse'];
+    const STATUT_LABEL={a_traiter:'À traiter',confirme:'Confirmé',refuse:'Refusé'};
+
+    const $=(id)=>document.getElementById(id);
+    const loginScreen=$('login-screen'), dashScreen=$('dash-screen');
+    let demandes=[], filtre='all';
+
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function fmtDateFr(iso){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(iso||'');return m?m[3]+'/'+m[2]+'/'+m[1]:'—';}
+    function fmtDateTimeFr(iso){const d=new Date(iso);if(isNaN(d))return '—';
+      const p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}).formatToParts(d);
+      const g=t=>(p.find(x=>x.type===t)||{}).value;return g('day')+'/'+g('month')+'/'+g('year')+' à '+g('hour')+'h'+g('minute');}
+    function telHref(tel){return 'tel:'+String(tel).replace(/[^0-9+]/g,'');}
+
+    function counts(){
+      const c={total:demandes.length,a_traiter:0,confirme:0,refuse:0};
+      for(const d of demandes) if(c[d.statut]!=null) c[d.statut]++;
+      return c;
+    }
+
+    function renderFilters(){
+      const c=counts();
+      const defs=[
+        {key:'all',label:'Toutes',n:c.total},
+        {key:'a_traiter',label:'À traiter',n:c.a_traiter},
+        {key:'confirme',label:'Confirmées',n:c.confirme},
+        {key:'refuse',label:'Refusées',n:c.refuse},
+      ];
+      $('filters').innerHTML=defs.map(f=>
+        `<button class="fpill ${filtre===f.key?'active':''}" data-filtre="${f.key}">${f.label} <span class="n">${f.n}</span></button>`
+      ).join('');
+      $('filters').querySelectorAll('.fpill').forEach(b=>b.addEventListener('click',()=>{filtre=b.dataset.filtre;render();}));
+      $('dash-sub').textContent=`${c.total} demande${c.total>1?'s':''} au total · ${c.a_traiter} à traiter`;
+    }
+
+    function renderDemande(d){
+      const actions=STATUTS.map(s=>{
+        if(s===d.statut) return `<span class="act cur ${s}">${STATUT_LABEL[s]}</span>`;
+        const cls=s==='confirme'?'go-confirme':s==='refuse'?'go-refuse':'';
+        return `<button class="act ${cls}" data-id="${d.id}" data-statut="${s}">${STATUT_LABEL[s]}</button>`;
+      }).join('');
+      return `<article class="demande" data-statut="${d.statut}">
+        <div class="d-top">
+          <div>
+            <div class="d-veh">${esc(d.vehicule_nom)}</div>
+            <div class="d-when">Demande reçue le ${fmtDateTimeFr(d.created_at)} · #${d.id}</div>
+          </div>
+          <span class="badge ${d.statut}">${STATUT_LABEL[d.statut]}</span>
+        </div>
+        <div class="d-grid">
+          <div class="kv"><span class="k">Période souhaitée</span><span class="v">${fmtDateFr(d.date_debut)} → ${fmtDateFr(d.date_fin)}</span></div>
+          <div class="kv"><span class="k">Client</span><span class="v">${esc(d.nom)}</span></div>
+          <div class="kv"><span class="k">Téléphone</span><span class="v"><a href="${telHref(d.tel)}">${esc(d.tel)}</a></span></div>
+          <div class="kv"><span class="k">Email</span><span class="v">${d.email?`<a href="mailto:${esc(d.email)}">${esc(d.email)}</a>`:'—'}</span></div>
+        </div>
+        ${d.message?`<div class="d-msg">${esc(d.message)}</div>`:''}
+        <div class="d-actions">
+          <span class="act-label">Statut :</span>
+          ${actions}
+        </div>
+      </article>`;
+    }
+
+    function render(){
+      renderFilters();
+      const shown=filtre==='all'?demandes:demandes.filter(d=>d.statut===filtre);
+      if(shown.length===0){
+        $('list').innerHTML=`<div class="empty">Aucune demande ${filtre!=='all'?'avec ce statut':'pour le moment'}.</div>`;
+      }else{
+        $('list').innerHTML=shown.map(renderDemande).join('');
+        $('list').querySelectorAll('.act[data-id]').forEach(b=>b.addEventListener('click',()=>changeStatut(b)));
+      }
+    }
+
+    async function changeStatut(btn){
+      const id=Number(btn.dataset.id), statut=btn.dataset.statut;
+      btn.disabled=true;
+      const {error}=await supa.from('demandes').update({statut}).eq('id',id);
+      if(error){btn.disabled=false;alert('Erreur : '+error.message);return;}
+      const d=demandes.find(x=>x.id===id); if(d) d.statut=statut;
+      render();
+    }
+
+    async function loadDemandes(){
+      const {data,error}=await supa.from('demandes').select('*').order('created_at',{ascending:false});
+      if(error){$('list').innerHTML=`<div class="empty">Erreur de chargement : ${esc(error.message)}</div>`;return;}
+      demandes=data||[];
+      render();
+    }
+
+    function showLogin(){dashScreen.classList.add('hidden');loginScreen.classList.remove('hidden');$('u').focus();}
+    function showDash(){loginScreen.classList.add('hidden');dashScreen.classList.remove('hidden');loadDemandes();}
+
+    // --- Auth ---
+    $('login-form').addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      const btn=$('login-btn'), errBox=$('login-err');
+      errBox.classList.add('hidden');
+      btn.disabled=true;const old=btn.textContent;btn.textContent='Connexion…';
+      const email=$('u').value.trim(), password=$('p').value;
+      const {error}=await supa.auth.signInWithPassword({email,password});
+      btn.disabled=false;btn.textContent=old;
+      if(error){errBox.textContent='Identifiant ou mot de passe incorrect.';errBox.classList.remove('hidden');return;}
+      showDash();
+    });
+    $('logout-btn').addEventListener('click',async()=>{await supa.auth.signOut();showLogin();});
+
+    // Session persistée -> bascule auto vers le dash si déjà connecté
+    (async()=>{
+      const {data:{session}}=await supa.auth.getSession();
+      if(session) showDash(); else showLogin();
+    })();
+  </script>
+</body>
+</html>

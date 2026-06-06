@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toyota Aygo — BH Location 83</title>
+  <meta name="description" content="Toyota Aygo en location chez BH Location 83 (La Farlède, 83). Tarifs, caution et demande de réservation directe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --font-display:'Instrument Serif',serif; --font-body:'Inter',sans-serif;
+      --bg:#050507; --bg-elev:#0a0a0d; --fg:#ffffff;
+      --muted:rgba(255,255,255,0.55); --muted-2:rgba(255,255,255,0.75);
+      --red:#d4202e; --red-soft:rgba(212,32,46,0.18); --red-glow:rgba(212,32,46,0.45);
+      --glass:rgba(255,255,255,0.04); --glass-hi:rgba(255,255,255,0.07);
+      --glass-bd:rgba(255,255,255,0.1); --glass-bd-hi:rgba(255,255,255,0.18);
+      --r-sm:14px; --r-md:22px; --r-lg:28px; --r-xl:36px;
+      --ease-expo:cubic-bezier(0.16,1,0.3,1); --ease-quart:cubic-bezier(0.25,1,0.5,1);
+      --container-pad:1.25rem; --section-py:5rem;
+    }
+    @media (min-width:768px){ :root{ --container-pad:2rem; --section-py:7rem; } }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{min-height:100%;font-family:var(--font-body);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    .container{width:100%;max-width:1240px;margin:0 auto;padding-left:var(--container-pad);padding-right:var(--container-pad);}
+
+    /* NAVBAR */
+    .navbar{position:fixed;top:0.85rem;left:0;right:0;z-index:100;display:grid;grid-template-columns:auto 1fr auto;align-items:center;max-width:1240px;margin:0 auto;padding:0 var(--container-pad);gap:1rem;}
+    .nav-logo img{height:30px;width:auto;display:block;}
+    .nav-links{display:none;align-items:center;gap:0.25rem;padding:0.35rem;background:var(--glass);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid var(--glass-bd);border-radius:999px;justify-self:center;}
+    @media (min-width:768px){.nav-links{display:flex;}}
+    .nav-links a{font-size:0.875rem;color:rgba(255,255,255,0.65);padding:0.5rem 1rem;border-radius:999px;transition:all 0.25s var(--ease-quart);}
+    .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,0.08);}
+    .nav-cta{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:#fff;padding:0.55rem 1rem;background:var(--glass-hi);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid var(--glass-bd-hi);border-radius:999px;transition:all 0.25s var(--ease-quart);justify-self:end;min-height:40px;}
+    @media (min-width:768px){.nav-cta{font-size:0.875rem;padding:0.65rem 1.3rem;}}
+    .nav-cta:hover{background:rgba(255,255,255,0.16);transform:translateY(-1px);}
+
+    /* HERO PRODUIT */
+    .hero{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;background:var(--bg);}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+    /* Scrim haut : garantit la lisibilité du texte dans la moitié haute libérée du visuel */
+    .hero-scrim{position:absolute;top:0;left:0;right:0;height:62vh;z-index:2;background:linear-gradient(to bottom,rgba(5,5,7,0.78),rgba(5,5,7,0.45) 38%,rgba(5,5,7,0.12) 70%,transparent);pointer-events:none;}
+    .hero-fade{position:absolute;bottom:0;left:0;right:0;height:30vh;z-index:2;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;}
+    .hero-content{position:absolute;top:0;left:0;right:0;z-index:3;padding-top:7.5rem;}
+    @media (min-width:768px){.hero-content{padding-top:9rem;}}
+    .hero-back{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.82rem;color:var(--muted-2);margin-bottom:1.4rem;transition:color 0.25s var(--ease-quart);}
+    .hero-back:hover{color:#fff;}
+    .hero-eyebrow{display:inline-block;font-size:0.7rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--red);margin-bottom:0.9rem;font-weight:500;}
+    .hero-name{font-family:var(--font-display);font-size:clamp(2.6rem,8vw,4.75rem);line-height:0.98;letter-spacing:-1.5px;font-weight:400;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,0.5);}
+    .hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem 1.4rem;margin-top:1.3rem;}
+    .hero-price{display:flex;align-items:baseline;gap:0.4rem;}
+    .hero-price .from{font-size:0.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;}
+    .hero-price .amt{font-family:var(--font-display);font-size:2rem;line-height:1;}
+    .hero-price .unit{font-size:0.82rem;color:var(--muted-2);}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1.8rem;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.9rem;font-weight:500;padding:0.85rem 1.5rem;border-radius:999px;transition:all 0.25s var(--ease-quart);cursor:pointer;}
+    .btn-accent{background:var(--red);color:#fff;box-shadow:0 4px 28px var(--red-glow);border:none;}
+    .btn-accent:hover{background:#e02938;transform:translateY(-1px);box-shadow:0 8px 36px var(--red-glow);}
+    .btn-ghost{color:rgba(255,255,255,0.9);border:1px solid var(--glass-bd-hi);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+    .btn-ghost:hover{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.28);}
+
+    section{position:relative;z-index:5;padding-top:var(--section-py);padding-bottom:var(--section-py);}
+    .eyebrow{display:inline-block;font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;font-weight:500;}
+    .s-title{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.2rem);line-height:1;letter-spacing:-1px;font-weight:400;}
+
+    /* SPECS */
+    .specs{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+    @media (min-width:768px){.specs{grid-template-columns:repeat(4,1fr);gap:1.25rem;}}
+    .spec{display:flex;flex-direction:column;gap:0.35rem;padding:1.3rem;background:var(--glass);border:1px solid var(--glass-bd);border-radius:var(--r-md);}
+    .spec-k{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+    .spec-v{font-family:var(--font-display);font-size:1.4rem;line-height:1.05;}
+
+    /* TARIFS */
+    .tarifs-head{margin-bottom:2.5rem;}
+    .tarifs-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+    @media (min-width:768px){.tarifs-grid{grid-template-columns:repeat(2,1fr);gap:1.25rem;}}
+    .tarif-card{position:relative;display:flex;flex-direction:column;gap:0.55rem;padding:2rem 1.6rem;background:var(--glass);border:1px solid var(--glass-bd);border-radius:var(--r-lg);transition:transform 0.5s var(--ease-expo),border-color 0.5s var(--ease-expo),box-shadow 0.5s var(--ease-expo);}
+    .tarif-card:hover{transform:translateY(-5px);border-color:var(--glass-bd-hi);box-shadow:0 20px 50px -20px rgba(0,0,0,0.7);}
+    .tarif-card.featured{border-color:var(--red-soft);background:linear-gradient(160deg,rgba(212,32,46,0.12),var(--glass));box-shadow:0 12px 50px -16px var(--red-glow);}
+    .t-tag{position:absolute;top:-0.7rem;left:1.6rem;font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:var(--red);padding:0.3rem 0.75rem;border-radius:999px;font-weight:600;box-shadow:0 4px 16px var(--red-glow);}
+    .t-dur{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-2);}
+    .t-price{font-family:var(--font-display);font-size:3rem;line-height:0.95;}
+    .t-note{font-size:0.86rem;color:var(--muted);}
+    .caution-line{margin-top:1.8rem;text-align:center;font-size:0.92rem;color:var(--muted-2);}
+    .caution-line strong{color:#fff;font-family:var(--font-display);font-size:1.15rem;}
+
+    /* FORMULAIRE DEMANDE */
+    .demande-card{background:var(--glass);border:1px solid var(--glass-bd);border-radius:var(--r-xl);padding:2rem 1.4rem;}
+    @media (min-width:768px){.demande-card{padding:3rem 2.6rem;}}
+    .demande-head{margin-bottom:2rem;}
+    .demande-head p{margin-top:0.9rem;font-size:0.95rem;color:var(--muted-2);line-height:1.6;max-width:52ch;}
+    .form-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+    @media (min-width:640px){.form-grid{grid-template-columns:1fr 1fr;}}
+    .field{display:flex;flex-direction:column;gap:0.45rem;}
+    .field.full{grid-column:1/-1;}
+    .field label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+    .field label .req{color:var(--red);}
+    .field input,.field textarea{font-family:var(--font-body);font-size:0.95rem;color:#fff;background:rgba(255,255,255,0.03);border:1px solid var(--glass-bd);border-radius:var(--r-sm);padding:0.85rem 1rem;transition:border-color 0.25s var(--ease-quart),background 0.25s var(--ease-quart);width:100%;}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--red);background:rgba(255,255,255,0.05);}
+    .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.32);}
+    .field textarea{resize:vertical;min-height:96px;}
+    input[type=date]{color-scheme:dark;}
+    .form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:0.9rem;margin-top:1.8rem;}
+    .form-msg{font-size:0.9rem;line-height:1.5;margin-top:1.2rem;display:none;}
+    .form-msg.show{display:block;}
+    .form-msg.ok{color:#5fd38a;}
+    .form-msg.err{color:#ff6b6b;}
+    .form-or{font-size:0.85rem;color:var(--muted);}
+    .form-wa{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.88rem;color:rgba(255,255,255,0.9);}
+    .form-wa:hover{color:#fff;}
+
+    /* CTA BAND */
+    .cta-band{position:relative;padding:3rem var(--container-pad);border-radius:var(--r-xl);border:1px solid var(--glass-bd);overflow:hidden;text-align:center;background:linear-gradient(135deg,rgba(212,32,46,0.14),rgba(10,10,13,0.4));}
+    .cta-band h2{font-family:var(--font-display);font-size:clamp(1.9rem,5.5vw,3rem);line-height:1.02;letter-spacing:-0.5px;font-weight:400;max-width:18ch;margin:0 auto;}
+    .cta-band p{margin:1rem auto 1.8rem;font-size:0.95rem;color:var(--muted-2);max-width:46ch;line-height:1.6;}
+
+    /* FOOTER */
+    footer{position:relative;z-index:5;padding:3rem var(--container-pad) 2rem;border-top:1px solid rgba(255,255,255,0.06);background:#050507;}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:1200px;margin:0 auto;}
+    @media (min-width:640px){.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media (min-width:1024px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;}}
+    .footer-brand h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:-0.5px;margin-bottom:0.75rem;}
+    .footer-brand p{font-size:0.88rem;color:var(--muted-2);line-height:1.55;max-width:32ch;}
+    .footer-col h4{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;font-weight:500;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+    .footer-col a{font-size:0.88rem;color:rgba(255,255,255,0.7);transition:color 0.25s var(--ease-quart);}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{max-width:1200px;margin:2.5rem auto 0;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column-reverse;align-items:center;gap:1rem;font-size:0.78rem;color:var(--muted);text-align:center;}
+    @media (min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left;}}
+
+    /* WA FAB */
+    .wa-fab{position:fixed;bottom:1.25rem;right:1.25rem;z-index:90;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(18,18,24,0.65);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid var(--glass-bd-hi);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.45);transition:all 0.3s var(--ease-quart);}
+    @media (min-width:768px){.wa-fab{width:56px;height:56px;bottom:1.75rem;right:1.75rem;}}
+    .wa-fab:hover{background:rgba(18,18,24,0.8);transform:scale(1.06);}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.8s var(--ease-expo),transform 0.8s var(--ease-expo);}
+    .reveal.in{opacity:1;transform:none;}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><img src="images/logo-bh.png" alt="BH Location 83" /></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html" class="active">Catalogue</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Toyota%20Aygo.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener" class="nav-cta">
+      Réserver
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </nav>
+
+  <header class="hero">
+    <picture>
+      <source media="(max-width:767px)" srcset="images/catalogue-bh/09-aygo-hero-mobile.jpg" />
+      <img class="hero-img" src="images/catalogue-bh/09-aygo-hero-desktop.jpg" alt="Toyota Aygo" />
+    </picture>
+    <div class="hero-scrim"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content container">
+      <a href="catalogue.html" class="hero-back">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Tous les véhicules
+      </a>
+      <div>
+        <span class="hero-eyebrow">Citadine</span>
+        <h1 class="hero-name">Toyota Aygo</h1>
+        <div class="hero-meta">
+          <div class="hero-price"><span class="from">dès</span><span class="amt">200€</span><span class="unit">/ week-end</span></div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#demande" class="btn btn-accent">
+            Demander ce véhicule
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#tarifs" class="btn btn-ghost">Voir les tarifs</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="container">
+    <span class="eyebrow">Caractéristiques</span>
+    <div class="specs">
+        <div class="spec">
+          <span class="spec-k">Catégorie</span>
+          <span class="spec-v">Citadine</span>
+        </div>
+        <div class="spec">
+          <span class="spec-k">Places</span>
+          <span class="spec-v">4 places</span>
+        </div>
+        <div class="spec">
+          <span class="spec-k">Énergie</span>
+          <span class="spec-v">Essence</span>
+        </div>
+        <div class="spec">
+          <span class="spec-k">Boîte</span>
+          <span class="spec-v">Manuelle</span>
+        </div>
+    </div>
+  </section>
+
+  <section class="container" id="tarifs" style="padding-top:0;">
+    <div class="tarifs-head">
+      <span class="eyebrow">Tarifs</span>
+      <h2 class="s-title">Des prix clairs,<br>sans surprise.</h2>
+    </div>
+    <div class="tarifs-grid">
+        <div class="tarif-card featured">
+          <span class="t-tag">Le plus demandé</span>
+          <span class="t-dur">Week-end</span>
+          <span class="t-price">200€</span>
+          <span class="t-note">L’évasion d’un week-end</span>
+        </div>
+        <div class="tarif-card">
+          
+          <span class="t-dur">7 jours</span>
+          <span class="t-price">350€</span>
+          <span class="t-note">La semaine complète</span>
+        </div>
+    </div>
+    <p class="caution-line">Caution : <strong>1 500€</strong> · restituée intégralement au retour du véhicule</p>
+  </section>
+
+  <section class="container" id="demande" style="padding-top:0;">
+    <div class="demande-card reveal">
+      <div class="demande-head">
+        <span class="eyebrow">Demande de réservation</span>
+        <h2 class="s-title">Réservez la Toyota Aygo.</h2>
+        <p>Indiquez vos dates et vos coordonnées : on vous rappelle pour confirmer la disponibilité et le tarif exact. Sans engagement, sans paiement en ligne.</p>
+      </div>
+      <form id="demande-form" novalidate>
+        <input type="hidden" name="vehicule_slug" value="aygo" />
+        <input type="hidden" name="vehicule_nom" value="Toyota Aygo" />
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-debut">Date de début <span class="req">*</span></label>
+            <input type="date" id="f-debut" name="date_debut" required />
+          </div>
+          <div class="field">
+            <label for="f-fin">Date de fin <span class="req">*</span></label>
+            <input type="date" id="f-fin" name="date_fin" required />
+          </div>
+          <div class="field">
+            <label for="f-nom">Nom complet <span class="req">*</span></label>
+            <input type="text" id="f-nom" name="nom" autocomplete="name" placeholder="Jean Dupont" required />
+          </div>
+          <div class="field">
+            <label for="f-tel">Téléphone <span class="req">*</span></label>
+            <input type="tel" id="f-tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78" required />
+          </div>
+          <div class="field full">
+            <label for="f-email">Email <span style="color:var(--muted);text-transform:none;letter-spacing:0;">(optionnel)</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" placeholder="jean.dupont@email.com" />
+          </div>
+          <div class="field full">
+            <label for="f-message">Message <span style="color:var(--muted);text-transform:none;letter-spacing:0;">(optionnel)</span></label>
+            <textarea id="f-message" name="message" placeholder="Une précision sur votre demande ?"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-accent" id="demande-submit">
+            Envoyer ma demande
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <span class="form-or">ou</span>
+          <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Toyota%20Aygo.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener" class="form-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Réserver via WhatsApp
+          </a>
+        </div>
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="container" style="padding-top:0;">
+    <div class="cta-band reveal">
+      <h2>Disponible dès maintenant.</h2>
+      <p>Indiquez-nous vos dates, on confirme la disponibilité de la Toyota Aygo et on bloque le véhicule pour vous.</p>
+      <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Toyota%20Aygo.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener" class="btn btn-accent">
+        Réserver maintenant
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>BH Location 83</h3>
+        <p>Location de véhicules tourisme &amp; utilitaires à La Farlède (83). Une flotte récente, un contact direct, une réservation simple.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Réserver</h4>
+        <ul>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Volkswagen%20Tiguan.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%E2%80%99indiquer%20les%20tarifs%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener">Tiguan 2026</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Audi%20RS3.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%E2%80%99indiquer%20les%20tarifs%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener">Audi RS3</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20BMW%20S%C3%A9rie%207.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%E2%80%99indiquer%20les%20tarifs%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener">BMW Série 7</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJ'ai%20une%20question%20ou%20je%20souhaite%20prendre%20rendez-vous.%0APouvez-vous%20me%20rappeler%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener">Autre véhicule</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact direct</h4>
+        <ul>
+          <li><a href="tel:0783317746">07 83 31 77 46</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJ'ai%20une%20question%20ou%20je%20souhaite%20prendre%20rendez-vous.%0APouvez-vous%20me%20rappeler%20%3F%0A%0AMerci%20!" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="index.html">Mentions Légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BH Location 83. Tous droits réservés.</span>
+      <span>La Farlède · Var · France</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJ'ai%20une%20question%20ou%20je%20souhaite%20prendre%20rendez-vous.%0APouvez-vous%20me%20rappeler%20%3F%0A%0AMerci%20!" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Reveal on scroll (identique au template)
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Soumission du formulaire de demande -> Supabase (URL permanente, clé anon publique).
+    // RLS : la clé anon ne peut QU'insérer une demande (jamais lire) -> aucune fuite de données.
+    const SUPA_URL='https://xqppgxwikpbhxnnyuniu.supabase.co';
+    const SUPA_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxcHBneHdpa3BiaHhubnl1bml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2OTEyMDIsImV4cCI6MjA5NjI2NzIwMn0.XwjyiNtkedZclxVRH-Pn97H2Toz1MryjoIzkaZ5c5uM';
+    const form=document.getElementById('demande-form');
+    const msg=document.getElementById('form-msg');
+    const submitBtn=document.getElementById('demande-submit');
+    form.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      msg.className='form-msg';
+      const data=Object.fromEntries(new FormData(form).entries());
+      // Validation cliente minimale
+      if(!data.date_debut||!data.date_fin||!data.nom.trim()||!data.tel.trim()){
+        msg.textContent='Merci de remplir les dates, votre nom et votre téléphone.';
+        msg.classList.add('show','err');return;
+      }
+      if(data.date_fin<data.date_debut){
+        msg.textContent='La date de fin doit être après la date de début.';
+        msg.classList.add('show','err');return;
+      }
+      const payload={
+        vehicule_slug:data.vehicule_slug, vehicule_nom:data.vehicule_nom,
+        date_debut:data.date_debut, date_fin:data.date_fin,
+        nom:data.nom.trim(), tel:data.tel.trim(),
+        email:(data.email||'').trim()||null, message:(data.message||'').trim()||null,
+      };
+      submitBtn.disabled=true;const old=submitBtn.innerHTML;submitBtn.textContent='Envoi…';
+      try{
+        const r=await fetch(SUPA_URL+'/rest/v1/demandes',{
+          method:'POST',
+          headers:{'apikey':SUPA_ANON,'Authorization':'Bearer '+SUPA_ANON,'Content-Type':'application/json','Prefer':'return=minimal'},
+          body:JSON.stringify(payload),
+        });
+        if(r.ok){
+          const vNom=form.vehicule_nom.value;
+          form.reset();
+          msg.textContent='Demande envoyée ! On vous rappelle très vite pour confirmer la disponibilité de la '+vNom+'.';
+          msg.classList.add('show','ok');
+        }else{
+          msg.textContent='Une erreur est survenue. Réessayez ou contactez-nous via WhatsApp.';
+          msg.classList.add('show','err');
+        }
+      }catch(err){
+        msg.textContent='Connexion impossible. Réessayez ou contactez-nous via WhatsApp.';
+        msg.classList.add('show','err');
+      }finally{submitBtn.disabled=false;submitBtn.innerHTML=old;}
+    });
+  </script>
+</body>
+</html>

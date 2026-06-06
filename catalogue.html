@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue — BH Location 83</title>
+  <meta name="description" content="La flotte complète de BH Location 83 — citadines, sportives, SUV et véhicules de prestige à La Farlède (83). Réservation simple et directe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --font-display: 'Instrument Serif', serif;
+      --font-body: 'Inter', sans-serif;
+      --bg: #050507; --bg-elev: #0a0a0d; --fg: #ffffff;
+      --muted: rgba(255,255,255,0.55); --muted-2: rgba(255,255,255,0.75);
+      --red: #d4202e; --red-soft: rgba(212,32,46,0.18); --red-glow: rgba(212,32,46,0.45);
+      --glass: rgba(255,255,255,0.04); --glass-hi: rgba(255,255,255,0.07);
+      --glass-bd: rgba(255,255,255,0.1); --glass-bd-hi: rgba(255,255,255,0.18);
+      --r-sm: 14px; --r-md: 22px; --r-lg: 28px; --r-xl: 36px;
+      --ease-expo: cubic-bezier(0.16,1,0.3,1); --ease-quart: cubic-bezier(0.25,1,0.5,1);
+      --container-pad: 1.25rem; --section-py: 5rem;
+    }
+    @media (min-width:768px){ :root{ --container-pad:2rem; --section-py:7rem; } }
+    @media (min-width:1024px){ :root{ --section-py:8rem; } }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      min-height:100%; font-family:var(--font-body); background:var(--bg); color:var(--fg);
+      -webkit-font-smoothing:antialiased; overflow-x:hidden;
+      background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,32,46,0.10), transparent 60%);
+      background-repeat:no-repeat;
+    }
+    a { color:inherit; text-decoration:none; }
+    .container { width:100%; max-width:1240px; margin:0 auto; padding-left:var(--container-pad); padding-right:var(--container-pad); }
+
+    /* NAVBAR (liquid glass) */
+    .navbar { position:fixed; top:0.85rem; left:0; right:0; z-index:100; display:grid; grid-template-columns:auto 1fr auto; align-items:center; max-width:1240px; margin:0 auto; padding:0 var(--container-pad); gap:1rem; }
+    .nav-logo img { height:30px; width:auto; display:block; }
+    .nav-links { display:none; align-items:center; gap:0.25rem; padding:0.35rem; background:var(--glass); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border:1px solid var(--glass-bd); border-radius:999px; justify-self:center; }
+    @media (min-width:768px){ .nav-links{ display:flex; } }
+    .nav-links a { font-size:0.875rem; color:rgba(255,255,255,0.65); padding:0.5rem 1rem; border-radius:999px; transition:all 0.25s var(--ease-quart); }
+    .nav-links a:hover { color:#fff; background:rgba(255,255,255,0.07); }
+    .nav-links a.active { color:#fff; background:rgba(255,255,255,0.08); }
+    .nav-cta { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.8rem; color:#fff; padding:0.55rem 1rem; background:var(--glass-hi); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border:1px solid var(--glass-bd-hi); border-radius:999px; transition:all 0.25s var(--ease-quart); justify-self:end; min-height:40px; }
+    @media (min-width:768px){ .nav-cta{ font-size:0.875rem; padding:0.65rem 1.3rem; } }
+    .nav-cta:hover { background:rgba(255,255,255,0.16); transform:translateY(-1px); }
+    .nav-cta svg { transition:transform 0.2s ease; }
+    .nav-cta:hover svg { transform:translateX(2px); }
+
+    /* HEADER */
+    .cat-header { padding-top:9rem; padding-bottom:2.5rem; text-align:center; }
+    @media (min-width:768px){ .cat-header{ padding-top:11rem; padding-bottom:3rem; } }
+    .eyebrow { display:inline-block; font-size:0.7rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--red); margin-bottom:1.1rem; font-weight:500; }
+    .cat-title { font-family:var(--font-display); font-size:clamp(2.6rem,9vw,5rem); line-height:0.98; letter-spacing:-1.5px; font-weight:400; }
+    .cat-title em { font-style:italic; color:var(--muted); }
+    .cat-sub { margin:1.2rem auto 0; font-size:0.98rem; color:var(--muted-2); max-width:54ch; line-height:1.6; }
+
+    /* FILTERS */
+    .filters { position:relative; display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem; padding:0.25rem 0 1.9rem; margin-bottom:0.5rem; }
+    .filter-pill { font-family:var(--font-body); font-size:0.82rem; color:rgba(255,255,255,0.6); padding:0.5rem 1.1rem; background:var(--glass); border:1px solid var(--glass-bd); border-radius:999px; cursor:pointer; transition:all 0.25s var(--ease-quart); white-space:nowrap; }
+    .filter-pill:hover { color:#fff; border-color:var(--glass-bd-hi); }
+    .filter-pill.active { color:#050507; background:#fff; border-color:#fff; font-weight:500; }
+
+    /* GRID */
+    .grid { display:grid; grid-template-columns:1fr; gap:1.1rem; padding-bottom:var(--section-py); }
+    @media (min-width:560px){ .grid{ grid-template-columns:1fr 1fr; gap:1.25rem; } }
+    @media (min-width:1000px){ .grid{ grid-template-columns:1fr 1fr 1fr; gap:1.5rem; } }
+
+    .v-card { position:relative; display:flex; flex-direction:column; background:var(--glass); border:1px solid var(--glass-bd); border-radius:var(--r-lg); overflow:hidden; transition:transform 0.5s var(--ease-expo), border-color 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo); }
+    .v-card:hover { transform:translateY(-6px); border-color:var(--red-soft); box-shadow:0 24px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px var(--red-soft), 0 12px 50px -12px var(--red-glow); }
+    .v-media { position:relative; aspect-ratio:1/1; overflow:hidden; background:#0a0a0d; }
+    .v-media img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s var(--ease-expo); }
+    .v-card:hover .v-media img { transform:scale(1.04); }
+    .v-badge { position:absolute; top:0.85rem; left:0.85rem; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; padding:0.32rem 0.7rem; background:rgba(10,10,13,0.55); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid var(--glass-bd-hi); border-radius:999px; font-weight:500; }
+    .v-body { padding:1.2rem 1.3rem 1.35rem; display:flex; flex-direction:column; gap:0.9rem; }
+    .v-name { font-family:var(--font-display); font-size:1.55rem; line-height:1.05; letter-spacing:-0.5px; font-weight:400; }
+    .v-foot { display:flex; align-items:flex-end; justify-content:space-between; gap:0.5rem; }
+    .v-price { display:flex; align-items:baseline; gap:0.35rem; flex-wrap:wrap; }
+    .v-price .from { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; }
+    .v-price .amt { font-family:var(--font-display); font-size:1.65rem; color:#fff; line-height:1; }
+    .v-price .unit { font-size:0.78rem; color:var(--muted-2); }
+    .v-arrow { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; flex-shrink:0; border-radius:999px; background:var(--glass-hi); border:1px solid var(--glass-bd-hi); color:#fff; transition:all 0.3s var(--ease-quart); }
+    .v-card:hover .v-arrow { background:var(--red); border-color:var(--red); transform:translateX(2px); box-shadow:0 4px 18px var(--red-glow); }
+    .empty { grid-column:1/-1; text-align:center; color:var(--muted); padding:3rem 0; font-size:0.95rem; }
+
+    /* CTA BAND */
+    .cta-band { position:relative; margin-bottom:var(--section-py); padding:3rem var(--container-pad); border-radius:var(--r-xl); border:1px solid var(--glass-bd); overflow:hidden; text-align:center; background:linear-gradient(135deg, rgba(212,32,46,0.14), rgba(10,10,13,0.4)); }
+    .cta-band h2 { font-family:var(--font-display); font-size:clamp(1.9rem,5.5vw,3rem); line-height:1.02; letter-spacing:-0.5px; font-weight:400; max-width:18ch; margin:0 auto; }
+    .cta-band p { margin:1rem auto 1.8rem; font-size:0.95rem; color:var(--muted-2); max-width:46ch; line-height:1.6; }
+    .cta-accent { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.95rem; font-weight:500; padding:0.95rem 1.8rem; border-radius:999px; background:var(--red); color:#fff; box-shadow:0 4px 28px var(--red-glow); transition:all 0.25s var(--ease-quart); }
+    .cta-accent:hover { background:#e02938; transform:translateY(-1px); box-shadow:0 8px 36px var(--red-glow); }
+
+    /* FOOTER */
+    footer { position:relative; z-index:5; padding:3rem var(--container-pad) 2rem; border-top:1px solid rgba(255,255,255,0.06); background:#050507; }
+    .footer-grid { display:grid; grid-template-columns:1fr; gap:2rem; max-width:1200px; margin:0 auto; }
+    @media (min-width:640px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+    @media (min-width:1024px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr 1fr; gap:3rem; } }
+    .footer-brand h3 { font-family:var(--font-display); font-size:1.5rem; letter-spacing:-0.5px; margin-bottom:0.75rem; }
+    .footer-brand p { font-size:0.88rem; color:var(--muted-2); line-height:1.55; max-width:32ch; }
+    .footer-col h4 { font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; font-weight:500; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+    .footer-col a { font-size:0.88rem; color:rgba(255,255,255,0.7); transition:color 0.25s var(--ease-quart); }
+    .footer-col a:hover { color:#fff; }
+    .footer-bottom { max-width:1200px; margin:2.5rem auto 0; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-direction:column-reverse; align-items:center; gap:1rem; font-size:0.78rem; color:var(--muted); text-align:center; }
+    @media (min-width:640px){ .footer-bottom{ flex-direction:row; justify-content:space-between; text-align:left; } }
+
+    /* WA FAB */
+    .wa-fab { position:fixed; bottom:1.25rem; right:1.25rem; z-index:90; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:999px; background:rgba(18,18,24,0.65); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border:1px solid var(--glass-bd-hi); color:#fff; box-shadow:0 8px 30px rgba(0,0,0,0.45); transition:all 0.3s var(--ease-quart); }
+    @media (min-width:768px){ .wa-fab{ width:56px; height:56px; bottom:1.75rem; right:1.75rem; } }
+    .wa-fab:hover { background:rgba(18,18,24,0.8); transform:scale(1.06); border-color:rgba(255,255,255,0.24); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo); }
+    .reveal.in { opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><img src="images/logo-bh.png" alt="BH Location 83" /></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html" class="active">Catalogue</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="nav-cta">
+      Réserver
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </nav>
+
+  <header class="cat-header container">
+    <span class="eyebrow">La Flotte</span>
+    <h1 class="cat-title">Onze véhicules.<br><em>Un seul standard.</em></h1>
+    <p class="cat-sub">De la citadine au véhicule de prestige, choisissez la voiture qui vous ressemble. Réservation directe, contact humain, disponibilité confirmée en quelques minutes.</p>
+  </header>
+
+  <div class="container">
+    <div class="filters" id="filters">
+      <button class="filter-pill active" data-filter="all">Toutes</button>
+      <button class="filter-pill" data-filter="citadine">Citadines</button>
+      <button class="filter-pill" data-filter="sportive">Sportives</button>
+      <button class="filter-pill" data-filter="suv">SUV</button>
+      <button class="filter-pill" data-filter="prestige">Prestige &amp; Van</button>
+    </div>
+
+    <div class="grid" id="grid">
+        <a href="produit-fiat500.html" class="v-card reveal" data-cat="citadine">
+          <div class="v-media">
+            <img src="images/catalogue-bh/00-fiat500-catalogue.jpg" alt="Fiat 500 — BH Location 83" loading="lazy" />
+            <span class="v-badge">Citadine</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Fiat 500</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">300€</span><span class="unit">/ week-end</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-tiguan.html" class="v-card reveal" data-cat="suv">
+          <div class="v-media">
+            <img src="images/catalogue-bh/01-tiguan-catalogue.jpg" alt="Volkswagen Tiguan — BH Location 83" loading="lazy" />
+            <span class="v-badge">SUV</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Volkswagen Tiguan</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">200€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-208gt.html" class="v-card reveal" data-cat="sportive">
+          <div class="v-media">
+            <img src="images/catalogue-bh/02-208gt-catalogue.jpg" alt="Peugeot 208 GT Line — BH Location 83" loading="lazy" />
+            <span class="v-badge">Sportive</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Peugeot 208 GT Line</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">400€</span><span class="unit">/ week-end</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-bmw-serie7.html" class="v-card reveal" data-cat="prestige">
+          <div class="v-media">
+            <img src="images/catalogue-bh/03-bmw-serie7-catalogue.jpg" alt="BMW Série 7 — BH Location 83" loading="lazy" />
+            <span class="v-badge">Berline</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">BMW Série 7</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">300€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-golf8r.html" class="v-card reveal" data-cat="sportive">
+          <div class="v-media">
+            <img src="images/catalogue-bh/04-golf8r-catalogue.jpg" alt="Volkswagen Golf 8 R — BH Location 83" loading="lazy" />
+            <span class="v-badge">Sportive</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Volkswagen Golf 8 R</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">200€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-rs3.html" class="v-card reveal" data-cat="sportive">
+          <div class="v-media">
+            <img src="images/catalogue-bh/05-rs3-catalogue.jpg" alt="Audi RS3 — BH Location 83" loading="lazy" />
+            <span class="v-badge">Sportive</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Audi RS3</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">300€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-viano.html" class="v-card reveal" data-cat="prestige">
+          <div class="v-media">
+            <img src="images/catalogue-bh/06-viano-catalogue.jpg" alt="Mercedes Viano — BH Location 83" loading="lazy" />
+            <span class="v-badge">Van 8 places</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Mercedes Viano</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">500€</span><span class="unit">/ week-end</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-golf8-rline.html" class="v-card reveal" data-cat="sportive">
+          <div class="v-media">
+            <img src="images/catalogue-bh/07-golf8-rline-catalogue.jpg" alt="Volkswagen Golf 8 R-Line — BH Location 83" loading="lazy" />
+            <span class="v-badge">Sportive</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Volkswagen Golf 8 R-Line</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">150€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-bmw-118i.html" class="v-card reveal" data-cat="sportive">
+          <div class="v-media">
+            <img src="images/catalogue-bh/08-bmw-118i-catalogue.jpg" alt="BMW 118i Pack M — BH Location 83" loading="lazy" />
+            <span class="v-badge">Sportive</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">BMW 118i Pack M</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">150€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-aygo.html" class="v-card reveal" data-cat="citadine">
+          <div class="v-media">
+            <img src="images/catalogue-bh/09-aygo-catalogue.jpg" alt="Toyota Aygo — BH Location 83" loading="lazy" />
+            <span class="v-badge">Citadine</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Toyota Aygo</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">200€</span><span class="unit">/ week-end</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="produit-2008.html" class="v-card reveal" data-cat="suv">
+          <div class="v-media">
+            <img src="images/catalogue-bh/10-2008-catalogue.jpg" alt="Peugeot 2008 — BH Location 83" loading="lazy" />
+            <span class="v-badge">SUV</span>
+          </div>
+          <div class="v-body">
+            <h3 class="v-name">Peugeot 2008</h3>
+            <div class="v-foot">
+              <div class="v-price"><span class="from">dès</span><span class="amt">100€</span><span class="unit">/ jour</span></div>
+              <span class="v-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      <p class="empty" id="empty" style="display:none;">Aucun véhicule dans cette catégorie.</p>
+    </div>
+
+    <section class="cta-band reveal" id="tarifs">
+      <h2>Un véhicule en tête&nbsp;?</h2>
+      <p>Dites-nous lequel et vos dates. On vous rappelle pour confirmer la disponibilité et le tarif exact, sans engagement.</p>
+      <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="cta-accent">
+        Réserver maintenant
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand reveal">
+        <h3>BH Location 83</h3>
+        <p>Location de véhicules tourisme &amp; utilitaires à La Farlède (83). Une flotte récente, un contact direct, une réservation simple.</p>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Réserver</h4>
+        <ul>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Volkswagen%20Tiguan.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Tiguan 2026</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Audi%20RS3.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Audi RS3</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20BMW%20S%C3%A9rie%207.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">BMW Série 7</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Autre véhicule</a></li>
+        </ul>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Contact direct</h4>
+        <ul>
+          <li><a href="tel:0783317746">07 83 31 77 46</a></li>
+          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJ%27ai%20une%20question%20ou%20je%20souhaite%20prendre%20rendez-vous.%0APouvez-vous%20me%20rappeler%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#">Mentions Légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BH Location 83. Tous droits réservés.</span>
+      <span>La Farlède · Var · France</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJ%27ai%20une%20question%20ou%20je%20souhaite%20prendre%20rendez-vous.%0APouvez-vous%20me%20rappeler%20%3F%0A%0AMerci%20%21" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*0.05)+'s';io.observe(el);});
+
+    // Filters
+    const pills=document.querySelectorAll('.filter-pill');
+    const cards=document.querySelectorAll('.v-card');
+    const empty=document.getElementById('empty');
+    pills.forEach(p=>p.addEventListener('click',()=>{
+      pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');
+      const f=p.dataset.filter;let n=0;
+      cards.forEach(c=>{const ok=(f==='all'||c.dataset.cat===f);c.style.display=ok?'':'none';if(ok)n++;});
+      empty.style.display=n?'none':'block';
+    }));
+  </script>
+</body>
+</html>
