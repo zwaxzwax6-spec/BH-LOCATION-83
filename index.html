@@ -380,6 +380,11 @@
     .wa-fab svg { position: relative; z-index: 3; }
     @media (min-width: 768px) { .wa-fab { width: 56px; height: 56px; } }
     .wa-fab:hover { background: rgba(18, 18, 24, 0.8); transform: scale(1.06); border-color: rgba(255, 255, 255, 0.24); }
+      /* Section « Autres services » */
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+    .service-price { font-family: var(--font-display); font-size: 1.35rem; line-height: 1; color: var(--red); margin-bottom: 0.5rem; }
+    .service-cta { margin-top: auto; align-self: flex-start; }
   </style>
 </head>
 <body>
@@ -394,7 +399,7 @@
       <a href="catalogue.html">Catalogue</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="nav-cta">
+    <a href="catalogue.html" class="nav-cta">
       Réserver
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
@@ -413,7 +418,7 @@
         <span class="shine">Roulez simple,</span><br /><em>vivez le Var.</em>
       </h1>
       <div class="cta-group a2">
-        <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="cta-primary">
+        <a href="catalogue.html" class="cta-primary">
           Réserver mon véhicule
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
@@ -591,7 +596,7 @@
           <em>Et bien d'autres véhicules disponibles.</em><br />
           Utilitaire pour déménager, monospace pour partir à plusieurs, modèle plus haut de gamme pour une occasion — demandez, on vous répond.
         </p>
-        <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="cta-accent">
+        <a href="catalogue.html" class="cta-accent">
           Demander un véhicule
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
@@ -645,6 +650,50 @@
     </div>
   </section>
 
+  <!-- AUTRES SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow reveal">Aussi chez BH</span>
+        <h2 class="section-title reveal" data-d="1">Nos autres services.</h2>
+      </div>
+      <div class="services-grid">
+
+        <article class="fleet-card glass reveal" data-d="1">
+          <div class="img-slot has-image ar-16-9">
+            <img src="images/catalogue-bh/service-lavage.jpg" alt="Lavage auto — BH Location 83" class="img-real" loading="lazy" />
+          </div>
+          <div class="fleet-card-body">
+            <div class="fleet-card-eyebrow"><span class="dot"></span><span>Esthétique</span></div>
+            <h3 class="fleet-card-title">Lavage Auto</h3>
+            <p class="service-price">À partir de 50€</p>
+            <p class="fleet-card-desc">433 Rue Baron Dominique, 83210 La Farlède</p>
+            <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20votre%20service%20de%20lavage%20auto.%20Pouvez-vous%20me%20donner%20vos%20disponibilit%C3%A9s%20%3F" target="_blank" rel="noopener" class="cta-accent service-cta">
+              Prendre RDV lavage
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="fleet-card glass reveal" data-d="2">
+          <div class="img-slot has-image ar-16-9">
+            <img src="images/catalogue-bh/service-depannage.jpg" alt="Dépannage et remorquage — BH Location 83" class="img-real" loading="lazy" />
+          </div>
+          <div class="fleet-card-body">
+            <div class="fleet-card-eyebrow"><span class="dot"></span><span>Assistance</span></div>
+            <h3 class="fleet-card-title">Dépannage 24h/24 · 7j/7</h3>
+            <p class="fleet-card-desc">Enlèvement d'épave · Remorquage · Dépannage. Localisé dans le Var, déplacement en Europe sur devis.</p>
+            <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%2C%20j%27ai%20besoin%20d%27un%20d%C3%A9pannage%20/%20remorquage.%20Pouvez-vous%20me%20rappeler%20rapidement%20%3F" target="_blank" rel="noopener" class="cta-accent service-cta">
+              Demander un dépannage
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CTA FINAL + INFOS — background visuel clé + médaillon BH -->
   <section id="contact" class="final-cta">
     <div class="final-cta-bg">
@@ -658,7 +707,7 @@
           <h2 class="final-cta-title reveal">Une route en tête,<br /><em>une voiture, un message.</em></h2>
           <p class="final-cta-desc reveal" data-d="1">On répond généralement en moins de dix minutes. Projet de route, déplacement pro, dépannage temporaire — dites-nous, on s'occupe du reste.</p>
           <div class="final-cta-buttons reveal" data-d="3">
-            <a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener" class="cta-accent">
+            <a href="catalogue.html" class="cta-accent">
               Réserver maintenant
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
@@ -715,10 +764,10 @@
       <div class="footer-col reveal" data-d="2">
         <h4>Réserver</h4>
         <ul>
-          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20le%20Volkswagen%20Tiguan%202026.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Tiguan 2026</a></li>
-          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Peugeot%20208%20GT.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Peugeot 208 GT</a></li>
-          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20la%20Fiat%20500.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20m%27indiquer%20les%20tarifs%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Fiat 500</a></li>
-          <li><a href="https://wa.me/33659405207?text=Bonjour%20BH%20Location%2083%20%F0%9F%91%8B%0A%0AJe%20souhaite%20r%C3%A9server%20un%20v%C3%A9hicule%20de%20votre%20flotte.%0APouvez-vous%20me%20rappeler%20pour%20fixer%20les%20dates%20et%20confirmer%20la%20disponibilit%C3%A9%20%3F%0A%0AMerci%20%21" target="_blank" rel="noopener">Autre véhicule</a></li>
+          <li><a href="produit-tiguan.html">Tiguan 2026</a></li>
+          <li><a href="produit-208gt.html">Peugeot 208 GT</a></li>
+          <li><a href="produit-fiat500.html">Fiat 500</a></li>
+          <li><a href="catalogue.html">Autre véhicule</a></li>
         </ul>
       </div>
       <div class="footer-col reveal" data-d="3">
