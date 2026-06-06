@@ -120,7 +120,7 @@
     .nav-cta:hover svg { transform: translateX(2px); }
 
     .hero { position: relative; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
-    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+    .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
     .hero-vignette { position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, 0.35) 100%); pointer-events: none; }
     .hero-bottom-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 22vh; z-index: 2; background: linear-gradient(to bottom, transparent, var(--bg)); pointer-events: none; }
     .hero-content { position: absolute; left: 0; right: 0; top: 18%; z-index: 10; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.25rem; }
@@ -409,9 +409,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay loop muted playsinline>
-      <source src="https://res.cloudinary.com/duia2hrlv/video/upload/v1779661005/hf_20260524_220845_5b441102-da71-42cc-ba2e-7675c969607f_yo3dqm.mp4" type="video/mp4" />
-    </video>
+    <img class="hero-media" src="images/catalogue-bh/hero-bh-location.jpg" alt="BH Location 83 — Fiat 500 blanche et Volkswagen Tiguan noir sous une brume rouge, plaque BH LOCATION 83" loading="eager" fetchpriority="high" decoding="async" />
     <div class="hero-vignette"></div>
     <div class="hero-content">
       <h1 class="headline a1">
