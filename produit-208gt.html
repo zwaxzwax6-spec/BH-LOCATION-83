@@ -84,6 +84,12 @@
     .t-dur{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-2);}
     .t-price{font-family:var(--font-display);font-size:3rem;line-height:0.95;}
     .t-note{font-size:0.86rem;color:var(--muted);}
+    .t-km{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.2rem;font-size:0.72rem;letter-spacing:0.02em;color:var(--muted);}
+    .t-km svg{color:var(--red);opacity:0.75;flex-shrink:0;}
+    /* Pill « km inclus / jour » : mention universelle, accent rouge, glassmorphism */
+    .km-pill{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;padding:0.6rem 1.05rem;font-size:0.9rem;font-weight:500;color:#fff;background:linear-gradient(135deg,var(--red-soft),var(--glass));border:1px solid var(--red-glow);border-radius:999px;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);box-shadow:0 6px 26px -10px var(--red-glow);}
+    .km-pill svg{color:var(--red);flex-shrink:0;}
+    .km-pill strong{font-weight:600;letter-spacing:-0.2px;}
     .caution-line{margin-top:1.8rem;text-align:center;font-size:0.92rem;color:var(--muted-2);}
     .caution-line strong{color:#fff;font-family:var(--font-display);font-size:1.15rem;}
 
@@ -211,6 +217,7 @@
     <div class="tarifs-head">
       <span class="eyebrow">Tarifs</span>
       <h2 class="s-title">Des prix clairs,<br>sans surprise.</h2>
+      <div class="km-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"></circle><path d="M13.4 12.6 19 7"></path><path d="M3.5 12a8.5 8.5 0 0 1 17 0"></path></svg><strong>200 km inclus / jour</strong></div>
     </div>
     <div class="tarifs-grid">
         <div class="tarif-card featured">
@@ -218,15 +225,17 @@
           <span class="t-dur">Week-end</span>
           <span class="t-price">400€</span>
           <span class="t-note">L’évasion d’un week-end</span>
+          <span class="t-km"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"></circle><path d="M13.4 12.6 19 7"></path><path d="M3.5 12a8.5 8.5 0 0 1 17 0"></path></svg>200 km inclus / jour</span>
         </div>
         <div class="tarif-card">
           
           <span class="t-dur">7 jours</span>
           <span class="t-price">600€</span>
           <span class="t-note">La semaine complète</span>
+          <span class="t-km"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"></circle><path d="M13.4 12.6 19 7"></path><path d="M3.5 12a8.5 8.5 0 0 1 17 0"></path></svg>200 km inclus / jour</span>
         </div>
     </div>
-    <p class="caution-line">Caution : <strong>2 000€</strong> · restituée intégralement au retour du véhicule</p>
+    <p class="caution-line">Caution : <strong>2 000€</strong> · 200 km inclus / jour · restituée intégralement au retour du véhicule</p>
   </section>
 
   <section class="container" id="demande" style="padding-top:0;">
@@ -292,7 +301,7 @@
     </div>
   </section>
 
-    <footer style="padding:1.5rem var(--container-pad);text-align:center;">
+  <footer style="padding:1.5rem var(--container-pad);text-align:center;">
     <p style="margin:0;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--muted);letter-spacing:0.01em;">© 2026 BH Location 83. Tous droits réservés.</p>
   </footer>
 
